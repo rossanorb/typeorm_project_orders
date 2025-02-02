@@ -4,12 +4,12 @@ import { User } from "./entity/User"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "localhost",
+    host: "172.17.0.1",
     port: 3306,
-    username: "test",
-    password: "test",
-    database: "test",
-    synchronize: true,
+    username: "root",
+    password: "102030",
+    database: "typeorm_project_orders",
+    synchronize: true, //" Enable this feature only for specific proposals. Everything you do within the entities will be reflected here in real time
     logging: false,
     entities: [User],
     migrations: [],
