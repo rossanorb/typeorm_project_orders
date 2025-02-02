@@ -1,20 +1,27 @@
-import { AppDataSource } from "./data-source"
-import { User } from "./entity/User"
+import * as dotenv from "dotenv";
+import express from 'express';
+import cors from 'cors';
+import routes from './routes/index.route'
+import { AppDataSource } from "./data-source";
 
-AppDataSource.initialize().then(async () => {
+dotenv.config();
+if (!process.env.PORT) {
+    process.exit(1);
+}
 
-    console.log("Inserting a new user into the database...")
-    const user = new User()
-    user.firstName = "Timber"
-    user.lastName = "Saw"
-    user.age = 25
-    await AppDataSource.manager.save(user)
-    console.log("Saved a new user with id: " + user.id)
+const PORT: number = parseInt(process.env.PORT);
 
-    console.log("Loading users from the database...")
-    const users = await AppDataSource.manager.find(User)
-    console.log("Loaded users: ", users)
+const app = express();
+app.use(cors({
+    origin:`http://localhost:${PORT}`
+}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(routes);
 
-    console.log("Here you can setup and run express / fastify / any other framework.")
-
+AppDataSource.initialize().then(async () => {    
+    console.log('Database OK');
+    app.listen(PORT, () => {
+        console.log(`Server started on port ${PORT}`);
+    })
 }).catch(error => console.log(error))
