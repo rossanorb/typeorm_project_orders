@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/User"
-import { migrations } from "./database/migrations/migrations"
+import * as entities  from "./entity"
+import * as migrations from "./database/migrations/migrations"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
     database: "typeorm_project_orders",
     synchronize: false, //" Enable this feature only for specific proposals. Everything you do within the entities will be reflected here in real time
     logging: false,
-    entities: [User],
+    entities: entities,
     migrations: migrations,
     subscribers: [],
 })
