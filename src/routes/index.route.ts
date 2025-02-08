@@ -5,9 +5,7 @@ const routers = Router();
 
 routers.get('/', async (_req: Request, res: Response): Promise<any> => {
     return res.status(200).json({
-        "status": "ok",
-        "Api type": "Rest",
-        "Version": "1.0"
+        "Route": "Home",
     });
 });
 
