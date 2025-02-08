@@ -26,6 +26,9 @@
    "scripts": {
       "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
       "start": "ts-node src/index.ts",
-      "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+      "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+      "typeorm:create": "npm run typeorm migration:create src/database/migrations/$npm_config_migration_name",
+      "typeorm:migrate": "npm run typeorm -- -d ./src/data-source.ts migration:run",
+      "typeorm:revert": "npm run typeorm -- -d ./src/data-source.ts migration:revert"     
    }
 }
