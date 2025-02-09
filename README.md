@@ -2,11 +2,12 @@
 
 Steps to run this project:
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+start node service: "typeorm_project_orders"
 
-
+```bash
+docker-compose up -d
+```
+** Require MySQL external server it's not present in the docker-compose
 
 # TypeOrm cli 
 

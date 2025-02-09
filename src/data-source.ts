@@ -5,7 +5,7 @@ import * as migrations from "./database/migrations/migrations"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "172.17.0.1",
+    host: "mysql.localhost.com",
     port: 3306,
     username: "root",
     password: "102030",
