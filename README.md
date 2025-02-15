@@ -28,7 +28,7 @@ npm run typeorm:migrate
 npm run typeorm:revert
 ```
 
-our 
+or 
 
 ```bash
 npm run typeorm migration:create src/database/migrations/[migration_name]

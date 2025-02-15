@@ -5,29 +5,33 @@ export class CreateTableSalespersonTable1739027283530 implements MigrationInterf
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: 'salesperson',
+                name: 'sales_person',
                 columns: [
                     {
                         name: 'id',
                         type: 'int',
                         isPrimary: true,
-                        generationStrategy: 'increment'
+                        isGenerated: true,
+                        generationStrategy: "increment"
                     },
                     {
-                        name: 'firstName',
+                        name: 'first_name',
                         type: 'varchar',
                         length: '100',
                         isNullable: false
                     },
                     {
-                        name: 'lastName',
+                        name: 'last_name',
                         type: 'varchar',
                         length: '100',
                         isNullable: false
                     },
                     {
                         name: 'number_id',
-                        type: 'int'
+                        isUnique: true,                        
+                        type: 'bigInt',
+                        default: null,
+                        isNullable: false
                     },                    
                 ]
             })
@@ -35,7 +39,7 @@ export class CreateTableSalespersonTable1739027283530 implements MigrationInterf
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('salesperson');
+        await queryRunner.dropTable('sales_person');
     }
 
 }

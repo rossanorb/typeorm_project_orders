@@ -1,0 +1,11 @@
+@hostname = localhost:9000
+
+###
+POST http://{{hostname}}/sales-person
+Content-Type: application/json
+
+{
+    "firstName": "",
+    "lastName": "",
+    "numberId": 123456789
+}

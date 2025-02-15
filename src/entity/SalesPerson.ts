@@ -6,13 +6,12 @@ export class SalesPerson {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
-    firstName: string
+    @Column("varchar", { length: 100 })
+    first_name: string
 
-    @Column()
-    lastName: string
+    @Column("varchar", { length: 100 })
+    last_name: string
 
-    @Column()
+    @Column("inet4", { nullable: false })
     number_id: number
-
 }
