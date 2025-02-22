@@ -1,4 +1,6 @@
 import { SalesPerson } from "../entity";
+import SalesPersonInterfaceOut from "../interfaces/out/salesperson-response.interface";
+import ServiceResponseInterface, { Status } from "../interfaces/out/service-response.interface";
 import SalesPersonInterface from "../interfaces/sales-person.interface";
 
 export default class SalesPersonService {
@@ -9,21 +11,19 @@ export default class SalesPersonService {
         this.repository = repository;
     }
 
-    create = async (data: SalesPersonInterface): Promise<object> => {
+    create = async (data: SalesPersonInterface): Promise<SalesPersonInterfaceOut> => {
 
-        const newSalesPerson = await this.repository.create(data);
-        if (newSalesPerson instanceof SalesPerson) {
+        const response: SalesPerson|string = await this.repository.create(data);
+        if (response instanceof SalesPerson) {
             return {
-                'status': 'ok',
-                'body': newSalesPerson
+                'status': Status.success,
+                'body': response
             };
         }
 
         return {
-            'status': 'failed',
-            'body': {
-                'error': newSalesPerson
-            }
+            'status': Status.failed,
+            'error': response
         };
     }
 }
