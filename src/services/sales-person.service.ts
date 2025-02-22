@@ -20,7 +20,7 @@ export default class SalesPersonService {
         }
 
         return {
-            'status': 'faled',
+            'status': 'failed',
             'body': {
                 'error': newSalesPerson
             }
