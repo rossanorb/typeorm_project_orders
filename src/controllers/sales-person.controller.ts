@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import SalesPersonService from '../services/sales-person.service';
 import salesPersonRepository from '../respositories/sales-person.repository';
-import SalesPersonInterface from '../interfaces/sales-person.interface';
 export default class SalesPersonController {
 
     protected service;

@@ -4,12 +4,8 @@ import ServiceResponseInterface, { Status } from "../interfaces/out/service-resp
 import SalesPersonInterface from "../interfaces/sales-person.interface";
 
 export default class SalesPersonService {
-
-    private repository;
-
-    constructor(repository) {
-        this.repository = repository;
-    }
+   
+    constructor(protected repository) {}
 
     create = async (data: SalesPersonInterface): Promise<SalesPersonInterfaceOut> => {
 

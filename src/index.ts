@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 
 AppDataSource.initialize().then(async () => {    
-    console.log('Database OK');
+    console.log('connection to database successful');
     app.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`);
     })
