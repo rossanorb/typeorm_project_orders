@@ -1,6 +1,6 @@
 import { AppDataSource } from "../data-source";
 import { SalesPerson } from "../entity";
-import SalesPersonInterface from "../interfaces/sales-person.interface";
+import SalesPersonInterface from "../interfaces/in/sales-person.interface";
 
 const create = async (data: SalesPersonInterface): Promise<SalesPerson | string> => {
     const salesPerson = new SalesPerson();

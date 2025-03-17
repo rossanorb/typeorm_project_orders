@@ -1,7 +1,7 @@
 import { SalesPerson } from "../entity";
 import SalesPersonInterfaceOut from "../interfaces/out/salesperson-response.interface";
 import { Status } from "../interfaces/out/service-response.interface";
-import SalesPersonInterface from "../interfaces/sales-person.interface";
+import SalesPersonInterface from "../interfaces/in/sales-person.interface";
 
 export default class SalesPersonService {
    

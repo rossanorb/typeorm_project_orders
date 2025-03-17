@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Application, IRouterHandler, IRouterMatcher, Request, Response } from 'express';
 import SalesPersonService from '../services/sales-person.service';
 import salesPersonRepository from '../respositories/sales-person.repository';
 export default class SalesPersonController {
@@ -10,8 +10,7 @@ export default class SalesPersonController {
     };
 
     create = async (req: Request, res: Response): Promise<Response> => {
-        const result = await this.service.create(req.body);
-        
-        return res.status(200).json(result);
+        const result = await this.service.create(req.body);        
+        return res.status(201).json(result);
     }
 }

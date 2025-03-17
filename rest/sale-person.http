@@ -5,7 +5,24 @@ POST http://{{hostname}}/sales-person
 Content-Type: application/json
 
 {
-    "firstName": "",
-    "lastName": "",
-    "numberId": 123456789
+    "firstName": "Ana",
+    "lastName": "Armas",
+    "numberId": 23014536630
+}
+
+
+###
+POST http://{{hostname}}/customer
+Content-Type: application/json
+
+{
+    "firstName": "João",
+    "lastName": "Silva",
+    "numberId": 43478478387,
+    "email": "joao.silva@domain.com",
+    "phone": "4354-8964",
+    "address": "Rua da ajuda,34",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "postal": "91122-678"
 }
