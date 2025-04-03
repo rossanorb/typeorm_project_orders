@@ -1,5 +1,6 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, OneToOne } from "typeorm";
 import { Person } from "./Person";
+import { Order } from "./Order";
 
 @Entity()
 export class Customer extends Person {
@@ -20,4 +21,7 @@ export class Customer extends Person {
 
     @Column('varchar', { length: 15 })
     postal: string
+
+    @OneToOne(() => Order, (order) => order.customer)
+    order:Order
 }

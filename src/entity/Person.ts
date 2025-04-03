@@ -12,7 +12,7 @@ export class Person {
     @Column("varchar", { length: 100 })
     last_name: string
 
-    @Column("inet4", { nullable: false })
+    @Column("int", { nullable: false })
     number_id: number
 
 }

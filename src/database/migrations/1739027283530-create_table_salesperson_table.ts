@@ -34,7 +34,8 @@ export class CreateTableSalespersonTable1739027283530 implements MigrationInterf
                         isNullable: false
                     },                    
                 ]
-            })
+            }),
+            true
         )        
     }
 

@@ -71,7 +71,8 @@ export class CreateTableCustomer1740252799681 implements MigrationInterface {
                         isNullable: true
                     },                    
                 ]
-            })
+            }),
+            true
         )
     }
 
