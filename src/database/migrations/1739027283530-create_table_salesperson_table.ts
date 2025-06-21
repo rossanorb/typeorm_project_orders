@@ -29,7 +29,7 @@ export class CreateTableSalespersonTable1739027283530 implements MigrationInterf
                     {
                         name: 'number_id',
                         isUnique: true,                        
-                        type: 'bigInt',
+                        type: 'bigint',
                         default: null,
                         isNullable: false
                     },                    

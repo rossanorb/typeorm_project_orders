@@ -17,7 +17,8 @@ export class CreateTableOrder1742764753797 implements MigrationInterface {
                     {
                         name: 'order_date',
                         type: 'timestamp',
-                        default: "now()"
+                        default: "now()",
+                        isNullable: true
                     },
                     {
                         name: "customer_id",
