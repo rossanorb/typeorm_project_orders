@@ -8,7 +8,6 @@ export default class CustomerService {
   constructor(protected repository) {}
 
   create = async (data: CustomerInterface): Promise<CustomerInterfaceOut> => {
-    console.log(data);
     const response: Customer | string = await this.repository.create(data);
     if (response instanceof Customer) {
       return {
