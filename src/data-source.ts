@@ -15,4 +15,6 @@ export const AppDataSource = new DataSource({
     entities: entities,
     migrations: migrations,
     subscribers: [],
+    supportBigNumbers: true,
+    cache: false
 })
