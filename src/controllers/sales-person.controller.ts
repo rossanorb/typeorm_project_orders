@@ -5,12 +5,17 @@ export default class SalesPersonController {
 
     protected service;
 
-    constructor(){        
+    constructor() {
         this.service = new SalesPersonService(salesPersonRepository);
     };
 
-    create = async (req: Request, res: Response): Promise<Response> => {
-        const result = await this.service.create(req.body);        
-        return res.status(201).json(result);
+    create = async (req: Request, res: Response): Promise<void> => {
+        try {
+            const result = await this.service.create(req.body);
+            res.status(201).json(result);
+        } catch (e) {
+            console.log(e)
+            res.sendStatus(500)
+        }
     }
 }

@@ -7,13 +7,18 @@ export default class CustomerController {
 
     protected service;
 
-    constructor(){
+    constructor() {
         this.service = new CustomerService(customerRepository);
     }
 
-    create = async (req: Request, res: Response): Promise<Response> => {
-        let result = await this.service.create(req.body);
-        return res.status(201).json(result);
+    create = async (req: Request, res: Response): Promise<void> => {
+        try {
+            const result = await this.service.create(req.body);
+            res.status(201).json(result);
+        } catch (e) {
+            console.log(e)
+            res.sendStatus(500)
+        }
     }
 
 }
