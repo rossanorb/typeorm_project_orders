@@ -7,9 +7,7 @@ const create = async (data: OrderInterface): Promise<Order|string> => {
     const order = new Order();
     order.customer_id =  data.customerId;
     order.sales_person_id = data.salesPersonId;
-    
-
-    console.log(order);
+    console.table(order);
 
     const manager = AppDataSource.manager;
 
