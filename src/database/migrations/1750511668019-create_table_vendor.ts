@@ -28,7 +28,8 @@ export class CreateTableVendor1750511668019 implements MigrationInterface {
                     },
                     {
                         name: 'ein',
-                        type: 'varchar',
+                        isUnique: true,
+                        type: 'bigint',
                         length: '15',
                         isNullable: true
                     },
