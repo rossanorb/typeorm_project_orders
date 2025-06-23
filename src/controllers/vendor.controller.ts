@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
-import SalesPersonService from '../services/sales-person.service';
-import salesPersonRepository from '../respositories/sales-person.repository';
-export default class SalesPersonController {
+import VendorService from '../services/vendor.service';
+import vendorRepository from '../respositories/vendor.repository';
 
+export default class VendorController {
     protected service;
 
     constructor() {
-        this.service = new SalesPersonService(salesPersonRepository);
-    };
+        this.service = new VendorService(vendorRepository);
+    }
 
     create = async (req: Request, res: Response): Promise<void> => {
         try {
@@ -17,5 +17,5 @@ export default class SalesPersonController {
             console.log(e)
             res.sendStatus(500)
         }
-    }
+    };
 }
