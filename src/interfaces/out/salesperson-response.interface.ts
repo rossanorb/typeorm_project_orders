@@ -1,10 +1,10 @@
-import ServiceResponseInterface from "./service-response.interface";
-import { SalesPerson } from "../../entity";
+import ServiceResponseInterface from './service-response.interface';
+import { SalesPerson } from '../../entity';
 
 type body = SalesPerson;
 
 interface SalesPersonInterfaceOut extends ServiceResponseInterface {
-    body?: body
+  body?: body;
 }
 
 export default SalesPersonInterfaceOut;

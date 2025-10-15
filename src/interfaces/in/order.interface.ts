@@ -1,6 +1,6 @@
 interface OrderInterface {
-    customerId: number;
-    salesPersonId: number;
+  customerId: number;
+  salesPersonId: number;
 }
 
 export default OrderInterface;

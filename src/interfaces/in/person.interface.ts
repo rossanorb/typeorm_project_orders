@@ -1,7 +1,7 @@
 interface PersonInterface {
-    firstName: string;
-    lastName: string;
-    numberId: number;
+  firstName: string;
+  lastName: string;
+  numberId: number;
 }
 
 export default PersonInterface;

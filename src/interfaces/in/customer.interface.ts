@@ -1,4 +1,4 @@
-import PersonInterface from "./person.interface";
+import PersonInterface from './person.interface';
 
 interface CustomerInterface extends PersonInterface {
   customer_id?: number;

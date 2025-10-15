@@ -5,7 +5,7 @@ export enum Status {
 
 interface ServiceResponseInterface {
   status: Status;
-  error?: string
+  error?: string;
 }
 
 export default ServiceResponseInterface;

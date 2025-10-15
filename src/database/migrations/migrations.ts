@@ -7,12 +7,11 @@ import { CreateProduct1750512801596 } from './1750512801596-create_product';
 import { CreateOrderInfo1750515186542 } from './1750515186542-create_order_info';
 
 export {
-    CreateTableSalespersonTable1739027283530,
-    CreateTableCustomer1740252799681,
-    CreateTableOrder1742764753797,
-    CreateTableProductCategory1750510190672,
-    CreateTableVendor1750511668019,
-    CreateProduct1750512801596,
-    CreateOrderInfo1750515186542
-}
-
+  CreateTableSalespersonTable1739027283530,
+  CreateTableCustomer1740252799681,
+  CreateTableOrder1742764753797,
+  CreateTableProductCategory1750510190672,
+  CreateTableVendor1750511668019,
+  CreateProduct1750512801596,
+  CreateOrderInfo1750515186542,
+};

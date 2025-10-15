@@ -11,4 +11,4 @@ routers.use('/customer', customerRouter);
 routers.use('/order', orderRouter);
 routers.use('/vendor', vendorRouter);
 
-export default routers; 
+export default routers;

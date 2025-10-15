@@ -1,11 +1,14 @@
-version: "3"
+version: '3.8'
 
 services:
   node:
     container_name: "typeorm_project_orders"
     build: .
     volumes:
-      - ./:/usr/app
-      - /usr/app/node_modules
+      - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
     ports:
       - "9000:9000"
+
+volumes:
+  node_modules:
