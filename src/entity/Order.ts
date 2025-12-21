@@ -3,11 +3,12 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
-  PrimaryColumn,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { SalesPerson } from './SalesPerson';
 import { Customer } from './Customer';
+import { OrderInfo } from './OrderInfo';
+import { SalesPerson } from './SalesPerson';
 
 @Entity()
 export class Order {
@@ -23,11 +24,14 @@ export class Order {
   @Column('int', { nullable: false })
   sales_person_id: number;
 
-  @ManyToOne(() => SalesPerson, salesPerson => salesPerson.order)
+  @ManyToOne(() => SalesPerson, salesPerson => salesPerson.orders)
   @JoinColumn({ name: 'sales_person_id' })
   salesPerson: SalesPerson;
 
-  @ManyToOne(() => Customer)
+  @ManyToOne(() => Customer, customer => customer.orders)
   @JoinColumn({ name: 'customer_id' })
   customer: Customer;
+
+  @OneToMany(() => OrderInfo, orderInfo => orderInfo.order)
+  orderInfos: OrderInfo[];
 }

@@ -1,9 +1,9 @@
-import { Entity, OneToOne } from 'typeorm';
-import { Person } from './Person';
+import { Entity, OneToMany } from 'typeorm';
 import { Order } from './Order';
+import { Person } from './Person';
 
 @Entity()
 export class SalesPerson extends Person {
-  @OneToOne(() => Order, order => order.salesPerson)
-  order: Order;
+  @OneToMany(() => Order, order => order.salesPerson)
+  orders: Order[];
 }

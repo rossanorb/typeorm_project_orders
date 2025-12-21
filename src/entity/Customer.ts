@@ -1,6 +1,6 @@
-import { Entity, Column, OneToOne } from 'typeorm';
-import { Person } from './Person';
+import { Column, Entity, OneToOne } from 'typeorm';
 import { Order } from './Order';
+import { Person } from './Person';
 
 @Entity()
 export class Customer extends Person {
@@ -23,5 +23,5 @@ export class Customer extends Person {
   postal: string;
 
   @OneToOne(() => Order, order => order.customer)
-  order: Order;
+  orders: Order[];
 }
