@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import OrderService from '../services/order.service';
 import orderRepository from '../respositories/order.repository';
+import OrderService from '../services/order.service';
 
 export default class OrderController {
   protected service;
