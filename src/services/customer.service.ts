@@ -1,8 +1,8 @@
 import { Customer } from '../entity';
 
-import { Status } from '../interfaces/out/service-response.interface';
 import CustomerInterface from '../interfaces/in/sales-person.interface';
 import CustomerInterfaceOut from '../interfaces/out/customer-response.interface';
+import { Status } from '../interfaces/out/service-response.interface';
 
 export default class CustomerService {
   constructor(protected repository) {}

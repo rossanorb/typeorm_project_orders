@@ -13,8 +13,6 @@ const create = async (data: VendorInterface): Promise<Vendor | string> => {
   vendor.address = data.address;
   vendor.postal = data.postal;
 
-  console.table(vendor);
-
   const manager = AppDataSource.manager;
 
   try {

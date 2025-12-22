@@ -7,15 +7,17 @@ start node service: "typeorm_project_orders"
 ```bash
 docker-compose up -d
 ```
-** Require MySQL external server it's not present in the docker-compose
 
-# TypeOrm cli 
+\*\* Require MySQL external server it's not present in the docker-compose
+
+# TypeOrm cli
 
 ### Create a new migration
 
 ```bash
 npm run typeorm:create --migration_name=[name]
 ```
+
 ### run migrations
 
 ```bash
@@ -28,7 +30,7 @@ npm run typeorm:migrate
 npm run typeorm:revert
 ```
 
-or 
+or
 
 ```bash
 npm run typeorm migration:create src/database/migrations/[migration_name]
@@ -40,3 +42,22 @@ npm run typeorm -- -d ./src/data-source.ts migration:revert
 npx typeorm-ts-node-commonjs migration:run -d src/data-source
 ```
 
+### Formatar todos os arquivos
+
+```bash
+npm run format
+
+# Verificar formatação
+npm run format:check
+
+# Formatar apenas código fonte
+npm run format:src
+```
+
+## Tasks
+
+- ~~Done !~~
+
+- ~~Alterar relacionamento da model order informando FKs~
+
+- criar migrations restantes

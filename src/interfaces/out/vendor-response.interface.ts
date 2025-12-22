@@ -4,7 +4,7 @@ import ServiceResponseInterface from './service-response.interface';
 type body = Vendor;
 
 interface VendorInterfaceOut extends ServiceResponseInterface {
-  body?: Vendor;
+  body?: body;
 }
 
 export default VendorInterfaceOut;
