@@ -5,9 +5,9 @@ POST http://{{hostname}}/sales-person
 Content-Type: application/json
 
 {
-    "firstName": "Ana",
-    "lastName": "Armas",
-    "numberId": 23014536630
+    "firstName": "Pedro",
+    "lastName": "Pereira",
+    "numberId": 68859878591
 }
 
 
@@ -16,13 +16,46 @@ POST http://{{hostname}}/customer
 Content-Type: application/json
 
 {
-    "firstName": "João",
-    "lastName": "Silva",
-    "numberId": 43478478387,
-    "email": "joao.silva@domain.com",
-    "phone": "4354-8964",
-    "address": "Rua da ajuda,34",
-    "city": "Porto Alegre",
-    "state": "RS",
-    "postal": "91122-678"
+    "firstName": " Fábio Gustavo",
+    "lastName": "da Mata",
+    "numberId": 24444991151,
+    "email": "fabio_damata@midiasim.com.br",
+    "phone": "(63)98381-9121",
+    "address": "Avenida Filadélfia, 295",
+    "city": "Setor Oeste",
+    "state": "TO",
+    "postal": "77816-540"
+}
+
+###
+POST http://{{hostname}}/vendor
+Content-Type: application/json
+
+{
+    "companyName": "TechLog Atacado Integrado",
+    "brandName": "TechLog",
+    "ein": "131213141",
+    "phone": "(18)2980-8723",
+    "address": "Rua Ricardo Anderson Cristófano, 447",
+    "city": "Paraíso",
+    "state": "SP",
+    "postal": "04104-090"
+}
+
+###
+POST http://{{hostname}}/product-category
+Content-Type: application/json
+
+{
+    "name": "category 1",
+    "description": "description 1"
+}
+
+###
+POST http://{{hostname}}/order
+Content-Type: application/json
+
+{
+    "customerId": 1,
+    "salesPersonId": 1
 }
