@@ -1,0 +1,74 @@
+{
+  "TypeORM Entity": {
+    "prefix": "typeorm-entity",
+    "body": [
+      "import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';",
+      "",
+      "@Entity('${1:table_name}')",
+      "export class ${2:EntityName} {",
+      "  @PrimaryGeneratedColumn()",
+      "  id: number;",
+      "",
+      "  @Column()",
+      "  ${3:property}: ${4:string};",
+      "",
+      "  @CreateDateColumn()",
+      "  createdAt: Date;",
+      "",
+      "  @UpdateDateColumn()",
+      "  updatedAt: Date;",
+      "}"
+    ],
+    "description": "Create a TypeORM entity"
+  },
+  "Express Controller": {
+    "prefix": "express-controller",
+    "body": [
+      "import { Request, Response } from 'express';",
+      "",
+      "export class ${1:ControllerName} {",
+      "  async ${2:methodName}(req: Request, res: Response) {",
+      "    try {",
+      "      ${3:// Implementation}",
+      "    } catch (error) {",
+      "      console.error('Error in ${2:methodName}:', error);",
+      "      res.status(500).json({ error: 'Internal server error' });",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "description": "Create an Express controller method"
+  },
+  "TypeORM Migration": {
+    "prefix": "typeorm-migration",
+    "body": [
+      "import { MigrationInterface, QueryRunner } from 'typeorm';",
+      "",
+      "export class ${1:MigrationName}${2:Timestamp} implements MigrationInterface {",
+      "  public async up(queryRunner: QueryRunner): Promise<void> {",
+      "    ${3:// Up migration}",
+      "  }",
+      "",
+      "  public async down(queryRunner: QueryRunner): Promise<void> {",
+      "    ${4:// Down migration}",
+      "  }",
+      "}"
+    ],
+    "description": "Create a TypeORM migration"
+  },
+  "Express Route": {
+    "prefix": "express-route",
+    "body": [
+      "import { Router } from 'express';",
+      "import { ${1:ControllerName} } from '../controllers/${2:controller-file}';",
+      "",
+      "const router = Router();",
+      "const ${3:controllerInstance} = new ${1:ControllerName}();",
+      "",
+      "router.${4:get}('/${5:path}', ${3:controllerInstance}.${6:methodName}.bind(${3:controllerInstance}));",
+      "",
+      "export default router;"
+    ],
+    "description": "Create an Express route"
+  }
+}

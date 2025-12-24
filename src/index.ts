@@ -1,8 +1,8 @@
+import cors from 'cors';
 import * as dotenv from 'dotenv';
 import express from 'express';
-import cors from 'cors';
-import routes from './routes/index.route';
 import { AppDataSource } from './data-source';
+import routes from './routes/index.route';
 
 dotenv.config();
 if (!process.env.PORT) {
