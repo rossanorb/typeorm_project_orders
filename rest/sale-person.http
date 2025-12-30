@@ -43,6 +43,18 @@ Content-Type: application/json
 }
 
 ###
+POST http://{{hostname}}/product
+Content-Type: application/json
+
+{
+    "name": "produto 1",
+    "description": "produto 1",
+    "price": 90,
+    "vendorId": 1,
+    "productCategoryId": 1
+}
+
+###
 POST http://{{hostname}}/product-category
 Content-Type: application/json
 
