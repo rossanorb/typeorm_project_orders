@@ -1,4 +1,4 @@
-import { Response, Request, Router } from 'express';
+import { Router } from 'express';
 import VendorController from '../controllers/vendor.controller';
 
 const controller = new VendorController();

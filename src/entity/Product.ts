@@ -21,6 +21,12 @@ export class Product {
   @Column('int', { nullable: false })
   price: number;
 
+  @Column('int', { name: 'product_category_id', nullable: false })
+  productCategoryId: number;
+
+  @Column('int', { name: 'vendor_id', nullable: false })
+  vendorId: number;
+
   @ManyToOne(() => ProductCategory, productCategory => productCategory.products)
   @JoinColumn({ name: 'product_category_id' })
   productCategory: ProductCategory;
