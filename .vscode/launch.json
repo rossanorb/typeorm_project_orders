@@ -35,7 +35,20 @@
       "port": 9229,
       "restart": true,
       "localRoot": "${workspaceFolder}",
-      "protocol": "inspector"
+      "remoteRoot": "/usr/src/app",
+      "protocol": "inspector",
+      "address": "localhost"
+    },
+    {
+      "name": "Attach to Docker",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "restart": true,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/src/app",
+      "protocol": "inspector",
+      "address": "localhost"
     }
   ]
 }

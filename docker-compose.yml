@@ -9,6 +9,7 @@ services:
       - node_modules:/usr/src/app/node_modules
     ports:
       - "9000:9000"
+      - "9229:9229"
 
 volumes:
   node_modules:

@@ -9,4 +9,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 9000
-CMD ["npm", "run", "dev"]
+EXPOSE 9229
+CMD ["npm", "run", "debug"]
