@@ -69,5 +69,19 @@ Content-Type: application/json
 
 {
     "customerId": 1,
-    "salesPersonId": 1
+    "salesPersonId": 3,
+    "orderInfos": [
+      {
+        "productId": 2,
+        "quantity": 1
+      },
+      {
+        "productId": 3,
+        "quantity": 1
+      }
+      # {
+      #   "productId": 4,
+      #   "quantity": 1
+      # }
+    ]
 }

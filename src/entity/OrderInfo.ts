@@ -19,6 +19,12 @@ export class OrderInfo {
   @Column('int', { nullable: false })
   quantity: number;
 
+  @Column('int', { nullable: false })
+  order_id: number;
+
+  @Column('int', { nullable: false })
+  product_id: number;
+
   @ManyToOne(() => Order, order => order.orderInfos)
   @JoinColumn({ name: 'order_id' })
   order: Order;
