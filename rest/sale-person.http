@@ -85,3 +85,8 @@ Content-Type: application/json
       # }
     ]
 }
+
+
+###
+GET http://{{hostname}}/order/1
+Content-Type: application/json

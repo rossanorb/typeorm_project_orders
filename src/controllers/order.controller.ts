@@ -18,4 +18,14 @@ export default class OrderController {
       res.sendStatus(500);
     }
   };
+
+  find = async (request: Request, response: Response): Promise<void> => {
+    try {
+      const result = await this.service.find(request.params.id);
+      response.status(200).json({ result });
+    } catch (error) {
+      console.log(error);
+      response.sendStatus(500);
+    }
+  };
 }

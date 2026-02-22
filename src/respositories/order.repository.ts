@@ -74,4 +74,20 @@ const create = async (data: OrderInterface): Promise<Order | string> => {
   }
 };
 
-export default { create };
+const find = async (id: number): Promise<Order | string> => {
+  try {
+    const order = await AppDataSource.manager
+      .getRepository(Order)
+      .findOneBy({ id });
+    if (!order) {
+      return `Order with id ${id} not found`;
+    }
+    return order;
+  } catch (error) {
+    return typeof error === 'object' && error?.message
+      ? error.message
+      : 'An unknown error occurred while finding the order';
+  }
+};
+
+export default { create, find };

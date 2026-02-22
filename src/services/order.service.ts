@@ -21,4 +21,20 @@ export default class OrderService {
       error: response,
     };
   };
+
+  find = async (id: number): Promise<OrderInterfaceOut> => {
+    const response: Order | string = await this.repository.find(id);
+
+    if (response instanceof Order) {
+      return {
+        status: Status.success,
+        body: response,
+      };
+    }
+
+    return {
+      status: Status.failed,
+      error: response,
+    };
+  };
 }
