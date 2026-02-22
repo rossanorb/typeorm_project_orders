@@ -76,9 +76,11 @@ const create = async (data: OrderInterface): Promise<Order | string> => {
 
 const find = async (id: number): Promise<Order | string> => {
   try {
-    const order = await AppDataSource.manager
-      .getRepository(Order)
-      .findOneBy({ id });
+    const order = await AppDataSource.manager.getRepository(Order).findOne({
+      where: { id },
+      relations: ['orderInfos', 'salesPerson', 'customer'],
+    });
+
     if (!order) {
       return `Order with id ${id} not found`;
     }
