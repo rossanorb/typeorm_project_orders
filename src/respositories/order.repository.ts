@@ -78,7 +78,26 @@ const find = async (id: number): Promise<Order | string> => {
   try {
     const order = await AppDataSource.manager.getRepository(Order).findOne({
       where: { id },
-      relations: ['orderInfos', 'salesPerson', 'customer'],
+      relations: [
+        'orderInfos',
+        'orderInfos.product',
+        'salesPerson',
+        'customer',
+      ],
+      select: {
+        id: true,
+        order_date: true,
+        orderInfos: {
+          id: true,
+          price: true,
+          quantity: true,
+          product: {
+            id: true,
+            name: true,
+            price: true,
+          },
+        },
+      },
     });
 
     if (!order) {

@@ -73,20 +73,16 @@ Content-Type: application/json
     "orderInfos": [
       {
         "productId": 2,
-        "quantity": 1
+        "quantity": 2
       },
       {
         "productId": 3,
         "quantity": 1
       }
-      # {
-      #   "productId": 4,
-      #   "quantity": 1
-      # }
     ]
 }
 
 
 ###
-GET http://{{hostname}}/order/1
+GET http://{{hostname}}/order/4
 Content-Type: application/json
