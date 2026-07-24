@@ -66,7 +66,7 @@ const create = async (data: OrderInterface): Promise<Order | string> => {
   } catch (error) {
     // Rollback transaction if any error occurs
     await queryRunner.rollbackTransaction();
-    return typeof error === 'object' && error.message
+    return error instanceof Error && error.message
       ? error.message
       : 'An unknown error occurred during order creation';
   } finally {
@@ -105,7 +105,7 @@ const find = async (id: number): Promise<Order | string> => {
     }
     return order;
   } catch (error) {
-    return typeof error === 'object' && error?.message
+    return error instanceof Error && error.message
       ? error.message
       : 'An unknown error occurred while finding the order';
   }

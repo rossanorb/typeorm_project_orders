@@ -1,28 +1,32 @@
 import { Request, Response } from 'express';
-import orderRepository from '../respositories/order.repository';
-import OrderService from '../services/order.service';
+import { Status } from '../interfaces/out/service-response.interface';
+import { OrderServiceInterface as IOrderService } from '../interfaces/services/orderService.interface';
 
 export default class OrderController {
-  protected service;
+  private readonly orderService: IOrderService;
 
-  constructor() {
-    this.service = new OrderService(orderRepository);
+  constructor(orderService: IOrderService) {
+    this.orderService = orderService;
   }
 
-  create = async (req: Request, res: Response): Promise<void> => {
+  create = async (request: Request, response: Response): Promise<void> => {
     try {
-      const result = await this.service.create(req.body);
-      res.status(201).json(result);
-    } catch (e) {
-      console.log(e);
-      res.sendStatus(500);
+      const result = await this.orderService.create(request.body);
+      response
+        .status(result.status === Status.success ? 201 : 500)
+        .json(result);
+    } catch (error) {
+      console.log(error);
+      response.sendStatus(500);
     }
   };
 
   find = async (request: Request, response: Response): Promise<void> => {
     try {
-      const result = await this.service.find(request.params.id);
-      response.status(200).json({ result });
+      const result = await this.orderService.find(Number(request.params.id));
+      response
+        .status(result.status === Status.success ? 200 : 500)
+        .json(result);
     } catch (error) {
       console.log(error);
       response.sendStatus(500);
