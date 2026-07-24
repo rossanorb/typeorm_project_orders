@@ -1,9 +1,11 @@
-version: '3.8'
+version: "3.8"
 
 services:
   node:
     container_name: "typeorm_project_orders"
     build: .
+    # Force Docker Compose to run your package.json script
+    command: npm run debug
     volumes:
       - ./:/usr/src/app
       - node_modules:/usr/src/app/node_modules
