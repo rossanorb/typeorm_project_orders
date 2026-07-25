@@ -41,14 +41,14 @@ npm run typeorm -- -d ./src/data-source.ts migration:revert
 npx typeorm-ts-node-commonjs migration:run -d src/data-source
 ```
 
-### Formatar todos os arquivos
+### Format all files
 
 ```bash
 npm run format
 
-# Verificar formatação
+# Check the formatting
 npm run format:check
 
-# Formatar apenas código fonte
+# Format source code only
 npm run format:src
 ```
