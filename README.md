@@ -53,11 +53,3 @@ npm run format:check
 # Formatar apenas código fonte
 npm run format:src
 ```
-
-## Tasks
-
-- ~~Done !~~
-
-- ~~Alterar relacionamento da model order informando FKs~
-
-- criar migrations restantes
