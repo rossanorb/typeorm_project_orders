@@ -1,4 +1,3 @@
-# Awesome Project Build with TypeORM
 
 Steps to run this project:
 
@@ -8,7 +7,7 @@ start node service: "typeorm_project_orders"
 docker-compose up -d
 ```
 
-\*\* Require MySQL external server it's not present in the docker-compose
+\*\* Requires an external MySQL server, which is not included in docker-compose. Provide the connection details in the .env file.
 
 # TypeOrm cli
 
